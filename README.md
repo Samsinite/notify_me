@@ -40,7 +40,7 @@ A user wants to request a task swap
 Likely in some controller somewhere
 
     action = Action.find(params[:id])
-    action.run_action() # if this was the action created above, this would call swap_task.accept_swap
+    action.run_action() # if this was the action created above, this would call swap_task.accept_swap(action)
 
 
 ## Notification
