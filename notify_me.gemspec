@@ -11,4 +11,9 @@ Gem::Specification.new do |s|
 	s.files         = `git ls-files`.split("\n")
 	s.test_files    = `git ls-files -- {spec}/*`.split("\n")
 	s.require_paths = ['lib']
+
+	s.add_runtime_dependency		'activerecord', ">=3.2.0"
+	s.add_development_dependency	'combustion',	"~> 0.4.0"
+	s.add_development_dependency	'rspec-rails',	"~> 2.13"
+	s.add_development_dependency	'sqlite3'
 end
