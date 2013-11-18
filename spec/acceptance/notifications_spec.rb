@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Adding and removing notifications" do
 	let(:user) { User.create(username: "Test") }
-	let(:message_notification) { NotifyMe::Notification.create(message: "This is a test msg")}
+	let(:message_notification) { NotifyMe::Notification.create(:message => "This is a test msg")}
 
 	it "stores new notifications" do
 		user.notifications << message_notification

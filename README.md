@@ -23,3 +23,5 @@ or more actions associated with them.
     * not required, but if it is provided it must be unique
 * has_been_processed - Boolean
     * set to true after the action is processed.
+* name - String
+    * say you want a name to display in a UI, use this field here

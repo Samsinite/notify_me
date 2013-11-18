@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
 	s.name        = 'notify_me'
-	s.version     = '0.0.1'
+	s.version     = '0.0.2'
 	s.authors     = ['Sam Clopton']
 	s.email       = ['samsinite@gmail.com']
 	s.homepage    = 'https://github.com/samsinite/notify_me'

@@ -68,7 +68,7 @@ end
 
 describe "Adding and removing actions" do
 	let(:user) { User.create(username: "Test") }
-	let(:message_notification) { NotifyMe::Notification.create(message: "This is a test msg") }
+	let(:message_notification) { NotifyMe::Notification.create(:message => "This is a test msg") }
 
 	it "stores new actions" do
 		action = message_notification.actions.create(:notification => message_notification,
@@ -90,7 +90,7 @@ end
 
 describe "Processing actions" do
 	let(:user) { User.create(username: "Test") }
-	let(:message_notification) { NotifyMe::Notification.create(message: "This is a test msg") }
+	let(:message_notification) { NotifyMe::Notification.create(:message => "This is a test msg") }
 
 	it "runs existing actions" do
 		action = message_notification.actions.create(:notification => message_notification,
