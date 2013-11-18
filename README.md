@@ -3,6 +3,42 @@
 This is a gem that provides simple and generic notifications that can have 0
 or more actions associated with them.
 
+## Usage:
+
+    class User < ActiveRecord::Base
+        has_many_notifications
+        ...
+    end
+    
+    class Task < ActiveRecord::Base
+        ...
+    end
+    
+    class TaskSwap < ActiveRecord::Base
+        belongs_to :from, class_name: "User"
+        belongs_to :to,     class_name: "User"
+        belongs_to :task
+    
+        def accept_swap(action)
+            ...
+        end
+    
+        def reject_swap(action)
+            ...
+        end
+    end
+    
+    swap_task = SwapTask.create(...)
+    notification = NotifyMe::Notification.create(message: "John Doe would like to swap tasks with you")
+    user.notifications << notification
+    
+    notification.actions.create(notification: notification, commandable: swap_task, action: "accept_swap", name: "Accept")
+    notification.actions.create(notification: notification, commandable: swap_task, action: "reject_swap", name: "Reject")
+    
+    action = Action.find(params[:id])
+    action.run_action() # if this was the action created above, this would call swap_task.accept_swap
+
+
 ## Notification
 * belongs_to :notifyable
 * has_many :actions
