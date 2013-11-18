@@ -4,7 +4,7 @@ describe "Adding and removing notifications" do
 	let(:user) { User.create(username: "Test") }
 	let(:message_notification) { NotifyMe::Notification.create(message: "This is a test msg")}
 
-	it "stores a new notifications" do
+	it "stores new notifications" do
 		user.notifications << message_notification
 
 		user.notifications.reload.should == [message_notification]
