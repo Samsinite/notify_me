@@ -1,7 +1,7 @@
+require 'active_support/concern'
+
 module NotifyMe::ActiveRecord
-	def self.include(base)
-		base.extend NotifyMe::ActiveRecord::ClassMethods
-	end
+	extend ActiveSupport::Concern
 
 	module ClassMethods
 		def has_many_notifications

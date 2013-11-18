@@ -1,4 +1,6 @@
-require 'bundler'
+require 'rubygems'
+require 'bundler/setup'
+require 'combustion'
 
 Bundler.require :default, :development
 

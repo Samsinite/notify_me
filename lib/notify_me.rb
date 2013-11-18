@@ -1,4 +1,5 @@
 module NotifyMe
+	#
 end
 
 require 'notify_me/active_record'
