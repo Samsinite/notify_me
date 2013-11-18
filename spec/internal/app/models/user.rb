@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
 
 		true
 	end
+
+	def self.do_something(action)
+		puts "TADA!"
+	end
 end
