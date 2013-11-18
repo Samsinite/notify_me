@@ -1,4 +1,7 @@
-### TODO: Write BETTER readme
+
+### Notfy Me
+This is a gem that provides simple and generic notifications that can have 0
+or more actions associated with them.
 
 ## Notification
 * belongs_to :notifyable
