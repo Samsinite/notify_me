@@ -1,3 +1,3 @@
-source 'https://rubygems.orb'
+source 'https://rubygems.org'
 
 gemspec
