@@ -29,6 +29,7 @@ or more actions associated with them.
     end
     
 A user wants to request a task swap
+
     swap_task = SwapTask.create(...)
     notification = NotifyMe::Notification.create(message: "John Doe would like to swap tasks with you")
     user.notifications << notification
@@ -37,6 +38,7 @@ A user wants to request a task swap
     notification.actions.create(notification: notification, commandable: swap_task, action: "reject_swap", name: "Reject")
     
 Likely in some controller somewhere
+
     action = Action.find(params[:id])
     action.run_action() # if this was the action created above, this would call swap_task.accept_swap
 
