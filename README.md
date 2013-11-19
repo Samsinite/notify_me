@@ -3,7 +3,7 @@ This is a gem that provides simple and generic notifications that can have 0
 or more actions associated with them.
 
 ## Usage:
-
+``` ruby
     class User < ActiveRecord::Base
         has_many_notifications
         ...
@@ -26,6 +26,7 @@ or more actions associated with them.
             ...
         end
     end
+```
     
 A user wants to request a task swap
 
