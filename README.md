@@ -3,6 +3,18 @@
 This is a gem that provides simple and generic notifications that can have 0
 or more actions associated with them.
 
+## Installation:
+
+Add to Gemfile
+```
+gem 'notify_me', '0.0.4'
+```
+Now install and run your migrations
+```
+rake notify_me:install:migrations
+rake db:migrate
+```
+
 ## Usage:
 ``` ruby
     class User < ActiveRecord::Base
