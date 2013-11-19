@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
 	end
 
 	def self.do_something(action)
-		puts "TADA!"
+		"I ran successfully :)"
 	end
 end

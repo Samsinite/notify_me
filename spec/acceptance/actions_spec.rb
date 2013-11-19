@@ -92,7 +92,7 @@ describe "Processing actions" do
 	let(:user) { User.create(username: "Test") }
 	let(:message_notification) { NotifyMe::Notification.create(:message => "This is a test msg") }
 
-	it "runs existing actions" do
+	it "runs instance actions" do
 		action = message_notification.actions.create(:notification => message_notification,
 													 :commandable => user,
 													 :commandable_action => "view_notification")
@@ -101,12 +101,29 @@ describe "Processing actions" do
 		message_notification.has_been_viewed.should be_true
 	end
 
-	it "marks ran actions as processed" do
+	it "marks ran instance actions as processed" do
 		action = message_notification.actions.create(:notification => message_notification,
 													 :commandable => user,
 													 :commandable_action => "view_notification")
 		action.run_action
 
+		action.has_been_processed.should be_true
+	end
+
+	it "runs constant actions" do
+		action = NotifyMe::Action.new(:notification => message_notification,
+									  :commandable_type => "User",
+									  :commandable_action => "do_something")
+
+		action.run_action.should eq("I ran successfully :)")
+	end
+
+	it "marks ran constant actions as processed" do
+		action = NotifyMe::Action.new(:notification => message_notification,
+									  :commandable_type => "User",
+									  :commandable_action => "do_something")
+		action.run_action
+		
 		action.has_been_processed.should be_true
 	end
 end
