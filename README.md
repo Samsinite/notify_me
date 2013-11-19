@@ -35,8 +35,8 @@ A user wants to request a task swap
     notification = NotifyMe::Notification.create(message: "John Doe would like to swap tasks with you")
     user.notifications << notification
     
-    notification.actions.create(notification: notification, commandable: swap_task, action: "accept_swap", name: "Accept")
-    notification.actions.create(notification: notification, commandable: swap_task, action: "reject_swap", name: "Reject")
+    notification.actions.create(notification: notification, commandable: swap_task, commandable_action: "accept_swap", name: "Accept")
+    notification.actions.create(notification: notification, commandable: swap_task, commandable_action: "reject_swap", name: "Reject")
 ```
 
 Likely in some controller somewhere
