@@ -46,8 +46,16 @@ class NotifyMe::Action < ActiveRecord::Base
 		end
 	end
 
+	def run_command(*args)
+		if self.commandable
+			self.commandable.send(self.commandable_action, self, *args)
+		else
+			self.commandable_type.constantize.send(self.commandable_action, self, *args)
+		end
+	end
+
 	def run_action(*args)
-		rval = self.commandable.send(self.commandable_action, self, *args)
+		rval = run_command(*args)
 
 		self.has_been_processed = true
 		self.save!

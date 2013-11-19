@@ -4,6 +4,6 @@ class ActionName < ActiveRecord::Migration
 	end
 
 	def down
-		remove_column :notify_me_actions, :name, :string
+		remove_column :notify_me_actions, :name
 	end
 end

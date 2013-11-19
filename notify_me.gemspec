@@ -1,7 +1,12 @@
 # -*- encoding: utf-8 -*-
+
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'notify_me/version'
+
 Gem::Specification.new do |s|
 	s.name        = 'notify_me'
-	s.version     = '0.0.2'
+	s.version     = NotifyMe::VERSION
 	s.authors     = ['Sam Clopton']
 	s.email       = ['samsinite@gmail.com']
 	s.homepage    = 'https://github.com/samsinite/notify_me'
