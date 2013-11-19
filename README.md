@@ -2,8 +2,7 @@
 This is a gem that provides simple and generic notifications that can have 0
 or more actions associated with them.
 
-[![Code Climate](https://codeclimate.com/repos/528be65b7e00a4785200fb08/badges/8e690d31fd37dcb6c9ea/gpa.png)](https://codeclimate.com/repos/528be65b7e00a4785200fb08/feed)
-
+[![Code Climate](https://codeclimate.com/github/Samsinite/notify_me.png)](https://codeclimate.com/github/Samsinite/notify_me)
 ## Usage:
 ``` ruby
     class User < ActiveRecord::Base
