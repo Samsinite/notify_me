@@ -32,7 +32,7 @@ or more actions associated with them.
 A user wants to request a task swap
 
 ``` ruby
-    swap_task = SwapTask.create(...)
+    swap_task = TaskSwap.create(...)
     notification = NotifyMe::Notification.create(message: "John Doe would like to swap tasks with you")
     user.notifications << notification
     
