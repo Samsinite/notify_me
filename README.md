@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/Samsinite/notify_me.png)](https://codeclimate.com/github/Samsinite/notify_me)
 # Notify Me
 This is a gem that provides simple and generic notifications that can have 0
 or more actions associated with them.
