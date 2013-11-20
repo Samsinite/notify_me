@@ -58,3 +58,6 @@ Likely in some controller somewhere
     action = Action.find(params[:id])
     action.run_action() # if this was the action created above, this would call swap_task.accept_swap(action)
 ```
+
+## License
+Copyright (c) 2013, Notify Me is developed and maintained by Sam Clopton, and is released under the open MIT Licence.
