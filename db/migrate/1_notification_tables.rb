@@ -1,8 +1,8 @@
 class NotificationTables < ActiveRecord::Migration
 	def up
 		create_table :notify_me_notifications do |t|
-			t.integer 	:notifyable_id
-			t.string 	:notifyable_type
+			t.integer  :notifyable_id
+			t.string   :notifyable_type
 
 			t.string 	:message
 			t.string	:message_details
@@ -16,12 +16,12 @@ class NotificationTables < ActiveRecord::Migration
 			:name => 'index_notifications_on_note_id_and_note_type_and_categories'
 
 		create_table :notify_me_actions do |t|
-			t.integer 	:notification_id
-			t.integer	:commandable_id
-			t.string	:commandable_type
-			t.string	:commandable_action
-			t.string 	:response_identifier
-			t.boolean	:has_been_processed, :required => true, :default => false
+			t.integer :notification_id
+			t.integer :commandable_id
+			t.string  :commandable_type
+			t.string  :commandable_action
+			t.string  :response_identifier
+			t.boolean :has_been_processed, :required => true, :default => false
 		end
 
 		add_index :notify_me_actions, :notification_id

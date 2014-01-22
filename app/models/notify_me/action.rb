@@ -2,18 +2,18 @@ class NotifyMe::Action < ActiveRecord::Base
 	self.table_name = "notify_me_actions"
 
 	belongs_to :notification
-	belongs_to :commandable, 			:polymorphic => true
+	belongs_to :commandable,       :polymorphic => true
 
-	validates 	:notification, 			:presence => true
-	validates 	:commandable_type, 		:presence => true
-	validates 	:commandable_action,	:presence => true
-	validate 	:validate_uniqness_of_unprocessed_identifiers
-	validate 	:validate_pressence_of_action
+	validates :notification,       :presence => true
+	validates :commandable_type,   :presence => true
+	validates :commandable_action, :presence => true
+	validate  :validate_uniqness_of_unprocessed_identifiers
+	validate  :validate_pressence_of_action
 
 	def validate_uniqness_of_unprocessed_identifiers
 		if self.response_identifier != nil
 			if NotifyMe::Action.where("response_identifier = ? AND has_been_processed = ?",
-									  self.response_identifier, false).count > 0
+			                          self.response_identifier, false).count > 0
 				errors.add(:base, "The response_identifier is not unique among unprocessed actions")
 			end
 		end
@@ -37,7 +37,7 @@ class NotifyMe::Action < ActiveRecord::Base
 
 	def self.process_by_identifier(identifier, *args)
 		action = self.where("response_identifier = ? AND has_been_processed = ?",
-				   identifier, false).first
+		                    identifier, false).first
 
 		if action
 			{:action => action, :rval => action.run_action(*args)}
