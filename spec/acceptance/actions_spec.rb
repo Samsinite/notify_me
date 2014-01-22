@@ -80,8 +80,8 @@ describe "Adding and removing actions" do
 
 	it "removes existing actions" do
 		action = message_notification.actions.create(:notification => message_notification,
-													 :commandable => user,
-													 :commandable_action => "view_notification")
+		                                             :commandable => user,
+		                                             :commandable_action => "view_notification")
 		message_notification.actions.delete action
 
 		user.notifications.reload.should == []
@@ -94,8 +94,8 @@ describe "Processing actions" do
 
 	it "runs instance actions" do
 		action = message_notification.actions.create(:notification => message_notification,
-													 :commandable => user,
-													 :commandable_action => "view_notification")
+		                                             :commandable => user,
+		                                             :commandable_action => "view_notification")
 		action.run_action
 
 		message_notification.has_been_viewed.should be_true
@@ -103,8 +103,8 @@ describe "Processing actions" do
 
 	it "marks ran instance actions as processed" do
 		action = message_notification.actions.create(:notification => message_notification,
-													 :commandable => user,
-													 :commandable_action => "view_notification")
+		                                             :commandable => user,
+		                                             :commandable_action => "view_notification")
 		action.run_action
 
 		action.has_been_processed.should be_true
